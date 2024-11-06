@@ -4,7 +4,7 @@
     $rut=$_GET["rut"];
     $email=$_GET["email"];
     $phone=$_GET["phone"];
-    $image=$_FILES["image"]
+    $image=$_FILES["image"];
    }
 
    $servername = "localhost";
