@@ -5,9 +5,10 @@
     $email=$_GET["email"];
     $phone=$_GET["phone"];
     $image=$_FILES["image"];
-   }
+    $text = "Name: $name\nRUT: $rut\nEmail: $email\nPhone: $phone\nImagen: $imagePath";
+    QRcode::png($text, 'filename.png');
 
-   $servername = "localhost";
+    $servername = "localhost";
     $username = "username";
     $password = "password";
 
@@ -18,5 +19,9 @@
     die("Connection failed: " . mysqli_connect_error());
     }
     echo "Connected successfully";
+
+   }
+
+  
 ?>
 
