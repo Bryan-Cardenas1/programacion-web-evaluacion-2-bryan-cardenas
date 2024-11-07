@@ -7,8 +7,12 @@
       $email=$_POST["email"];
       $phone=$_POST["phone"];
 
+      
 
-      //$imageName = $_FILES['image']['name']; 
+      
+
+
+      /* //$imageName = $_FILES['image']['name']; 
       $imageTmpPath = $_FILES['image']['tmp_name'];
    
       $text = "Name: $name\nRUT: $rut\nEmail: $email\nPhone: $phone";
@@ -31,8 +35,8 @@
       }
       echo "Connected successfully";
 
-      */
-   }
+      */ 
+      }
   
 ?>
 
