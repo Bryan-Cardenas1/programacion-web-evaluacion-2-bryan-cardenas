@@ -20,29 +20,45 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Asistentes</title>
-  <link rel="stylesheet" href="asistentes.css">
+    <link rel="stylesheet" href="asistentes.css">
 </head>
 <body>
 
 <div class="container">
-    <?php
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<div class='card'>";
-            echo "<h3>" . htmlspecialchars($row['nombre']) . "</h3>";
-            echo "<p><strong>RUT:</strong> " . htmlspecialchars($row['rut']) . "</p>";
-            echo "<p><strong>Email:</strong> " . htmlspecialchars($row['email']) . "</p>";
-            echo "<p><strong>Teléfono:</strong> " . htmlspecialchars($row['telefono']) . "</p>";
-            echo "<hr>";
-            echo "<p><strong>ID:</strong> " . htmlspecialchars($row['id']) . "</p>";
-            echo "</div>";
-        }
-    } else {
-        echo "<p>No se encontraron resultados.</p>";
-    }
+    <h1>Lista de Asistentes</h1>
 
-    mysqli_close($conn);
-    ?>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>RUT</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Fecha de Registro</th>
+                <th>Ver Tarjeta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>" . $row['nombre'] . "</td>";
+                    echo "<td>" . $row['rut'] . "</td>";
+                    echo "<td>" . $row['email'] . "</td>";
+                    echo "<td>" . $row['telefono'] . "</td>";
+                    echo "<td>" . $row['fecha_registro'] . "</td>";
+                    echo "<td><a href='ver_asistente.php?id=" . $row['id'] . "'>Ver Tarjeta</a></td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo " No se encontraron resultados.";
+            }
+
+            mysqli_close($conn);
+            ?>
+        </tbody>
+    </table>
 </div>
 
 </body>

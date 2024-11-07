@@ -34,18 +34,34 @@ mysqli_close($conn);
 <body>
 
 <div class="card">
-    <!-- Imagen del Asistente -->
-    <img src="<?php echo $asistente['imagen']; ?>" alt="Foto del asistente">
+    
+    <img src="<?php echo $asistente['imagen']; ?>">
 
-    <!-- Datos del Asistente -->
-    <h2><?php echo htmlspecialchars($asistente['nombre']); ?></h2>
-    <p><strong>RUT:</strong> <?php echo htmlspecialchars($asistente['rut']); ?></p>
-    <p><strong>Email:</strong> <?php echo htmlspecialchars($asistente['email']); ?></p>
-    <p><strong>Teléfono:</strong> <?php echo htmlspecialchars($asistente['telefono']); ?></p>
+    
+    <h2>
+        <?php echo $asistente['nombre']; ?>
+    </h2>
 
-    <!-- Código QR -->
+    <p>
+        <strong>RUT:</strong> 
+        <?php echo $asistente['rut'];?>
+        
+    </p>
+
+    <p>
+        <strong>Email:</strong> 
+        <?php echo $asistente['email']; ?>
+
+    </p>
+
+    <p>
+        <strong>Teléfono:</strong> 
+        <?php echo $asistente['telefono'] ?>
+    </p>
+
+   
     <div class="qr-code">
-        <img src="<?php echo $asistente['codigo_qr']; ?>" alt="Código QR">
+        <img src="<?php echo $asistente['codigo_qr']; ?>">
     </div>
 </div>
 
