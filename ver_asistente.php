@@ -1,11 +1,11 @@
 <?php
 include("conexion.php");
 
-// Verificar si el ID está presente en la URL
+
 if (isset($_GET['id'])) {
     $asistente_id = $_GET['id'];
 
-    // Consulta a la base de datos para obtener la información del asistente
+   
     $sql = "SELECT nombre, rut, email, telefono, imagen, codigo_qr FROM asistentes WHERE id = '$asistente_id'";
     $result = mysqli_query($conn, $sql);
 
@@ -24,11 +24,11 @@ mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta Virtual del Asistente</title>
+    <title>Asistente</title>
     <link rel="stylesheet" href="ver_asistente.css">
 </head>
 <body>
@@ -45,7 +45,7 @@ mysqli_close($conn);
     <p>
         <strong>RUT:</strong> 
         <?php echo $asistente['rut'];?>
-        
+
     </p>
 
     <p>
